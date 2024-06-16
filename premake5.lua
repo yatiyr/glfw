@@ -32,7 +32,6 @@ project "GLFW"
     filter "system:windows"
     systemversion "latest"
 
-
         files
         {
             "src/win32_time.h",
@@ -40,28 +39,27 @@ project "GLFW"
             "src/win32_module.c",
             "src/win32_time.c",
             "src/win32_thread.c",
+            "src/win32_platform.h",
+            "src/win32_joystick.h",
             "src/win32_init.c",
             "src/win32_joystick.c",
             "src/win32_monitor.c",
-            "src/win32_thread.c",
             "src/win32_window.c",
-            "src/wgl_context.c",
-            "src/egl_context.c",
-            "src/osmesa_context.c"
+            "src/wgl_context.c"
         }
 
         defines
         {
             "_GLFW_WIN32",
             "_CRT_SECURE_NO_WARNINGS"
-        }
+        }    
 
     filter "configurations:Debug"
-        defines "OP_DEBUG"
+        defines "YEL_DEBUG"
         runtime "Debug"
         symbols "on"
 
     filter "configurations:Release"
-        defines "OP_RELEASE"
+        defines "YEL_RELEASE"
         runtime "Release"
         optimize "on"
